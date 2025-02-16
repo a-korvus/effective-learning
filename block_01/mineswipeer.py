@@ -158,10 +158,9 @@ class GameBoard:
         for row in self._board:
             row_display: list[str] = []
             for cell in row:
-                # if not cell.is_open:
-                #     row_display.append("#")
-                # elif cell.mine:
-                if cell.mine:
+                if not cell.is_open:
+                    row_display.append("#")
+                elif cell.mine:
                     row_display.append("*")
                 else:
                     row_display.append(str(cell.around_mines))
