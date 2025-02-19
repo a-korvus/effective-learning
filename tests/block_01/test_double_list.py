@@ -1,6 +1,6 @@
 """Some tests for checking of custom double list implementation."""
 
-from block_01.double_list import LinkedList, ObjectList
+from block_01.task_01_double_list import LinkedList, ObjectList
 
 
 def test_empty_list() -> None:

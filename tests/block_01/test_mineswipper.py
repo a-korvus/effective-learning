@@ -1,13 +1,14 @@
 """Some tests for checking of custom mineswipper implementation."""
 
 import pytest
-from block_01.mineswipeer import GameBoard
+
+from block_01.task_02_mineswipeer import GameBoard
 
 
 def test_invalid_mine_count() -> None:
     """Проверка ограничения на количество мин."""
     board_size = 3
-    max_mines = board_size ** 2 - 1
+    max_mines = board_size**2 - 1
 
     with pytest.raises(ValueError):
         GameBoard(board_size, max_mines + 1)

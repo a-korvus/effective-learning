@@ -82,7 +82,7 @@ class GameBoard:
             ValueError: If the number of mines is
             greater than or equal to the total cells.
         """
-        if mines >= size ** 2:
+        if mines >= size**2:
             raise ValueError("Too many mines")
 
         self._size = size
@@ -99,7 +99,7 @@ class GameBoard:
         Uses `random.sample` to ensure unique position for each mine.
         """
         positions: list[int] = random.sample(
-            range(self._size ** 2),
+            range(self._size**2),
             self._mines,
         )
         for pos in positions:

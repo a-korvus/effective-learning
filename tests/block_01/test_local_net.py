@@ -2,7 +2,7 @@
 
 import pytest
 
-from block_01.local_net import Data, Router, Server
+from block_01.task_03_local_net import Data, Router, Server
 
 
 def test_send_data_without_router() -> None:
@@ -15,7 +15,7 @@ def test_send_data_without_router() -> None:
     data_packet = Data("some secret data", 1)
 
     with pytest.raises(TypeError):
-        server.send_data("no Data instance")
+        server.send_data("no Data instance")  # type: ignore[arg-type]
 
     with pytest.raises(ValueError):
         server.send_data(data_packet)
