@@ -12,7 +12,7 @@ def test_empty_list() -> None:
 
 
 def test_add_single_node() -> None:
-    """Добавления нового узла в пустой связный список."""
+    """Добавление нового узла в пустой связный список."""
     ll = LinkedList()
     node = ObjectList("node1")
     ll.add_obj(node)

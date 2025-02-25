@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:15
+    env_file:
+      - .env
+    container_name: ${PG_HOST}
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${PG_DB_NAME}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+    networks:
+      - task_net
+    volumes:
+      - task_vol_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $PG_USER -d $PG_DB_NAME"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+    command: ["postgres", "-c", "jit=off"]
+
+volumes:
+  task_vol_pg:
+    name: task_vol_pg
+
+networks:
+  task_net:
+    external: true

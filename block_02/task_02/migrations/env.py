@@ -9,8 +9,8 @@ from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
-from block_02.task_01.config import pg_config
-from block_02.task_01.db.models import Base
+from block_02.task_02.config import pg_config
+from block_02.task_02.db.models import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

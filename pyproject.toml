@@ -1,5 +1,7 @@
 [tool.mypy]
 exclude = ".venv/"
+namespace_packages = true
+explicit_package_bases = true
 
 [tool.black]
 line-length = 79
